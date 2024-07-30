@@ -1,7 +1,7 @@
 import { SalesPortalPage } from '../salesPortal.page.js';
 
 export class ProductsPage extends SalesPortalPage {
-  uniqueElement = '//h2[.="Products List "]';
+  readonly uniqueElement = '//h2[.="Products List "]';
 
   private readonly 'Add New Product button' = 'button.page-title-header';
   private readonly 'Table row selector' = (product: string) => `//tr[./td[text()="${product}"]]`;

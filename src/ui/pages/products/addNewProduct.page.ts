@@ -2,7 +2,7 @@ import { IProduct } from '../../../data/types/product.types.js';
 import { SalesPortalPage } from '../salesPortal.page.js';
 
 export class AddNewProductPage extends SalesPortalPage {
-  uniqueElement = '//h2[.="Add New Product "]';
+  readonly uniqueElement = '//h2[.="Add New Product "]';
 
   private readonly 'Name input' = '#inputName';
   private readonly 'Manufacturer dropdown' = 'select#inputManufacturer';

@@ -1,8 +1,8 @@
 import { BasePage } from './base.page.js';
 
-export class SalesPortalPage extends BasePage {
+export abstract class SalesPortalPage extends BasePage {
   protected readonly spinner = '.spinner-border';
-  uniqueElement = '';
+  abstract readonly uniqueElement: string;
 
   async waitForOpened() {
     await this.waitForElement(this.uniqueElement);
