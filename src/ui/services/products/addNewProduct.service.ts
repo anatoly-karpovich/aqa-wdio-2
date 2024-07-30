@@ -4,8 +4,10 @@ import { AddNewProductPage } from '../../pages/products/addNewProduct.page.js';
 import { ProductsPage } from '../../pages/products/products.page.js';
 
 export class AddProductService {
-  private productsPage = new ProductsPage();
-  private addNewProductPage = new AddNewProductPage();
+  constructor(
+    private productsPage = new ProductsPage(),
+    private addNewProductPage = new AddNewProductPage()
+  ) {}
 
   async fillProductInputs(product: Partial<IProduct>) {
     await this.addNewProductPage.fillInputs(product);
