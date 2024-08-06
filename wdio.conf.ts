@@ -41,7 +41,8 @@ export const config: Options.Testrunner = {
   suites: {
     ui: ['./src/ui/tests/**/*.test.ts'],
     ui_products: ['./src/ui/tests/products/**/*.test.ts'],
-    ui_simple: ['./src/ui/tests/simple/**/*.test.ts']
+    ui_simple: ['./src/ui/tests/simple/**/*.test.ts'],
+    api: ['./src/api/tests/**/*.test.ts']
   },
   // Patterns to exclude.
   exclude: [
@@ -73,7 +74,7 @@ export const config: Options.Testrunner = {
     {
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--disable-search-engine-choice-screen']
+        args: ['--disable-search-engine-choice-screen', 'headless']
       }
     }
   ],
