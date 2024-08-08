@@ -3,11 +3,13 @@ import { IProduct } from '../../../data/types/product.types.js';
 import { AddNewProductPage } from '../../pages/products/addNewProduct.page.js';
 import { ProductsPage } from '../../pages/products/products.page.js';
 import { logStep } from '../../../utils/report/decorator.js';
+import { EditProductPage } from '../../pages/products/editProduct.page.js';
 
 export class ProductsListService {
   constructor(
     private productsPage = new ProductsPage(),
-    private addNewProductPage = new AddNewProductPage()
+    private addNewProductPage = new AddNewProductPage(),
+    private editProductPage = new EditProductPage()
   ) {}
 
   @logStep('Open Add New Product page')
@@ -15,6 +17,13 @@ export class ProductsListService {
     await this.productsPage.clickOnAddNewProduct();
     await this.productsPage.waitForSpinnerToHide();
     await this.addNewProductPage.waitForOpened();
+  }
+
+  @logStep('Open Edit Product page')
+  async openEditProductPage(productName: string) {
+    await this.productsPage.clickOnEditProduct(productName);
+    await this.productsPage.waitForSpinnerToHide();
+    await this.editProductPage.waitForOpened();
   }
 
   async getExistingProductData(productName: string) {

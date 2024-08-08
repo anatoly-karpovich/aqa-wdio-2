@@ -7,6 +7,9 @@ export function validateSchema<T = object>(response: IResponse<T>, schema: objec
   const ajv = new Ajv();
   const validate = ajv.compile(schema);
   const isValidSchema = validate(response.body);
+  if (validate.errors) {
+    console.log(validate.errors);
+  }
   expect(isValidSchema).to.be.true;
 }
 

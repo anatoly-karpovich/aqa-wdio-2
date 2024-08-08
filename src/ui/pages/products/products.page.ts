@@ -8,9 +8,15 @@ export class ProductsPage extends SalesPortalPage {
   private readonly 'Name by table row' = (product: string) => `${this['Table row selector'](product)}/td[1]`;
   private readonly 'Price by table row' = (product: string) => `${this['Table row selector'](product)}/td[2]`;
   private readonly 'Manufacturer by table row' = (product: string) => `${this['Table row selector'](product)}/td[3]`;
+  private readonly 'Edit buttin by table row' = (product: string) =>
+    `${this['Table row selector'](product)}//button[@title="Edit"]`;
 
   async clickOnAddNewProduct() {
     await this.click(this['Add New Product button']);
+  }
+
+  async clickOnEditProduct(productName: string) {
+    await this.click(this['Edit buttin by table row'](productName));
   }
 
   async getDataByName(name: string) {

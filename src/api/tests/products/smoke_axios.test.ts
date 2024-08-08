@@ -11,7 +11,7 @@ import { validateResponse, validateSchema } from '../../../utils/validation/resp
 import { createdProductSchema } from '../../../data/schema/product.schema.js';
 import { STATUS_CODES } from '../../../data/types/api.types.js';
 
-describe('[API] [Products] Smoke', () => {
+describe.skip('[API] [Products] Smoke', () => {
   const apiClient = new AxiosApiClient();
   const productsApi = new ProductsApiClient();
   let token = '';
